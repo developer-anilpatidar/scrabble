@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :clubs
+  resources :profile, only: [:edit, :update]
 end

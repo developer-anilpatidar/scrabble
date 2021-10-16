@@ -1,0 +1,29 @@
+<%= form_with(url: profile_path, method: "patch") do |form| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(club.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+        <% @profile.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-3">
+    <div class="field form-group">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name, value: @profile.first_name, class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, value: @profile.last_name, class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
