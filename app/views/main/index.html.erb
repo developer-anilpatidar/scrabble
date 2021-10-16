@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Leader Board</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Player Name</th>
+      <th>Total Games</th>
+      <th>Average Score</th>
+      <th>Total Wins</th>
+      <th>Total Losses</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.full_name %></td>
+        <td><%= user.players.length %></td>
+        <td><%= user.players.average(:score) %></td>
+        <td><%= user.players.wins.length %></td>
+        <td><%= user.players.losses.length %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
