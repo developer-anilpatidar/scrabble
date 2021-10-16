@@ -5,20 +5,22 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - `3.0.1`
 
-* System dependencies
+* Bundler version - `2.2.15` 
+`gem install bundler -v 2.2.15`
 
-* Configuration
+* Install Bundle
+`bundle install`
+
+* Install node packages
+`yarn install`
 
 * Database creation
+`rails db:create`
 
 * Database initialization
+`rails db:migrate`
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Start Application
+`rails s`
