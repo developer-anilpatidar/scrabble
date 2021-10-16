@@ -12,7 +12,7 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new
+    @game = Game.new(players: [Player.new, Player.new])
   end
 
   # GET /games/1/edit
@@ -64,6 +64,6 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.require(:game).permit(:title, :description, :start_date, :end_date)
+      params.require(:game).permit(:title, :description, :start_date, :end_date, players_attributes: [:user_id, :score])
     end
 end
